@@ -5,7 +5,9 @@ from baseline import calculate_hash
 
 def load_baseline():
     with open('./baseline/baseline.json', 'r') as f:
-        return json.load(f)
+        baseline = json.load(f)
+        print("Loaded baseline:", baseline)
+        return baseline
 
 def monitor_files(baseline):
     changes = []
@@ -16,6 +18,7 @@ def monitor_files(baseline):
             current_hash = calculate_hash(file_path)
             if current_hash != metadata['hash']:
                 changes.append({"path": file_path, "change": "modified"})
+    print("Detected changes:", changes)
     return changes
 
 if __name__ == "__main__":

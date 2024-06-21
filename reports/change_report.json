@@ -1,0 +1,9 @@
+{
+    "summary": "Detected 1 changes",
+    "details": [
+        {
+            "path": "./monitor\\test1.txt",
+            "change": "modified"
+        }
+    ]
+}
